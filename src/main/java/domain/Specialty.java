@@ -1,0 +1,9 @@
+package domain;
+
+public enum Specialty {
+    DERMATOLOGIST,
+    GASTROENTEROLOGIST,
+    OPHTHALMOLOGIST,
+    PSYCHOLOGIST,
+    OTOLARYNGOLOGIES
+}
