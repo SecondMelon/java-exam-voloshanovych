@@ -1,0 +1,13 @@
+<Configuration stat="WARN">
+    <Appenders>
+        <RollingFile name="File" fileName="logs.app.log"
+        filePattern="%d{yyyy-MM-dd}-%i.log.gz"/>
+                <Pattern pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%t] %c - %msg%n"/>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
