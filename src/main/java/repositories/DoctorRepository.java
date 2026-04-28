@@ -17,10 +17,12 @@ public class DoctorRepository {
     public DoctorRepository() {}
 
     public void add(Doctor doctor) throws DoctorPresentException {
+        log.info("Adding doctor {}", doctor.getName());
         try {
             if (doctors.contains(doctor)) throw new DoctorPresentException("This doctor is already in the list");
             doctors.add(doctor);
             doctorsMap.put(doctor.getId(), doctor);
+            log.info("Added doctor successfully: {}", doctor.getName());
         } catch (DoctorPresentException e) {
             log.warn("The doctor {} is already presented", doctor.getName(), e);
             throw e;
@@ -28,11 +30,14 @@ public class DoctorRepository {
     }
 
     public void remove(int id) {
+        log.info("Removing the doctor {}", doctorsMap.get(id));
         doctors.remove(doctorsMap.get(id));
         doctorsMap.remove(id);
+        log.info("The doctor removed");
     }
 
     public void move(Doctor doctor, Specialty specialty) {
         doctor.setSpecialty(specialty);
+        log.info("The doctor {} moved to be {}", doctor.getName(), specialty.name());
     }
 }
