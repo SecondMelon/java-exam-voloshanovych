@@ -1,9 +1,11 @@
 package domain;
 
-import lombok.Value;
+import lombok.Data;
+import lombok.Setter;
 
-@Value
+@Data
 public class Doctor {
-    String name;
+    final int id;
+    final String name;
     Specialty specialty;
 }
