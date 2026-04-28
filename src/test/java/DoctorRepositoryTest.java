@@ -17,6 +17,6 @@ public class DoctorRepositoryTest {
 
     @Test
     void addDoctorShouldThrow() {
-
+        // Assertions does not work
     }
 }
